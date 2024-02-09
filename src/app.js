@@ -24,10 +24,10 @@ let generateExcuse = () => {
     "while I was praying"
   ];
 
-  let whoIndex = Math.floor(Math.random() * 4);
-  let actionIndex = Math.floor(Math.random() * 4);
-  let whatIndex = Math.floor(Math.random() * 3);
-  let whenIndex = Math.floor(Math.random() * 5);
+  let whoIndex = Math.floor(Math.random() * who.length);
+  let actionIndex = Math.floor(Math.random() * action.length);
+  let whatIndex = Math.floor(Math.random() * what.length);
+  let whenIndex = Math.floor(Math.random() * when.length);
 
   return (
     who[whoIndex] +
