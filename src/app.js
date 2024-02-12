@@ -5,11 +5,17 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+const button = document.getElementById("myButton");
+const div = document.getElementById("excuse");
+
 window.onload = function() {
   //write your code here
 
   console.log("randomnumber");
-  document.querySelector("#excuse").innerHTML = generateExcuse();
+  // document.querySelector("#excuse").innerHTML = generateExcuse();
+  //const button = document.getElementById("myButton");
+  // const div = document.getElementById("excuse");
+  button.addEventListener("click", generateExcuse);
 };
 
 let generateExcuse = () => {
@@ -23,19 +29,16 @@ let generateExcuse = () => {
     "during my lunch",
     "while I was praying"
   ];
+  const randomIndex = arr => {
+    return (arr = Math.floor(Math.random() * arr.length));
+  };
 
-  let whoIndex = Math.floor(Math.random() * who.length);
-  let actionIndex = Math.floor(Math.random() * action.length);
-  let whatIndex = Math.floor(Math.random() * what.length);
-  let whenIndex = Math.floor(Math.random() * when.length);
-
-  return (
-    who[whoIndex] +
+  return (div.innerHTML =
+    who[randomIndex(who)] +
     " " +
-    action[actionIndex] +
+    action[randomIndex(action)] +
     " " +
-    what[whatIndex] +
+    what[randomIndex(what)] +
     " " +
-    when[whenIndex]
-  );
+    when[randomIndex(when)]);
 };
